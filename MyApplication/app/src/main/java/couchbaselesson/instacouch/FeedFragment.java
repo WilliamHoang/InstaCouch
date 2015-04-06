@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,6 +30,7 @@ public class FeedFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_feed, container, false);
         RecyclerView recyclerView = (RecyclerView)v.findViewById(R.id.feed_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(new FeedAdapter(getActivity(), new ArrayList<Photo>()));
         return v;
     }
 
